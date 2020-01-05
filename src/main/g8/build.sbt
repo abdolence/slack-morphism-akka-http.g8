@@ -63,3 +63,7 @@ lazy val root =
       "io.swaydb" %% "swaydb" % swayDbVersion
     )
   )
+
+// Those just have better UX with sbt run and Ctrl-C, so remove them if you don't need it
+ThisBuild / fork in run := true
+Global / cancelable := false
