@@ -35,6 +35,7 @@ val slackMorphismVersion = "1.0.0"
 val akkaVersion = "2.5.27"
 val akkaHttpVersion = "10.1.11"
 val akkaHttpCirceVersion = "1.30.0"
+val sttpVersion = "2.0.0-RC5" // for STTP for Akka
 
 // logging and configs for example
 val logbackVersion = "1.2.3"
@@ -54,7 +55,8 @@ lazy val root =
       "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
       "com.typesafe.akka" %% "akka-stream-typed" % akkaVersion,
       "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
-      "org.latestbit" %% "slack-morphism" % slackMorphismVersion,
+      "com.softwaremill.sttp.client" %% "akka-http-backend" % sttpVersion,
+      "org.latestbit" %% "slack-morphism-client" % slackMorphismVersion,
       "de.heikoseeberger" %% "akka-http-circe" % akkaHttpCirceVersion
         excludeAll (ExclusionRule( organization = "com.typesafe.akka" ) ),
       "com.github.scopt" %% "scopt" % scoptVersion,

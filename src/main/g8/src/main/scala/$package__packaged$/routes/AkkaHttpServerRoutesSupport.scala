@@ -21,7 +21,7 @@ import cats.implicits._
 import com.typesafe.scalalogging.StrictLogging
 
 import $package$.AppConfig
-import $package$.SlackTokensDb
+import $package$.db.SlackTokensDb
 
 trait AkkaHttpServerRoutesSupport extends org.latestbit.slack.morphism.codecs.CirceCodecs with StrictLogging {
 

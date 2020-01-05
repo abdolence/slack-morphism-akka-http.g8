@@ -41,6 +41,12 @@
     <logger name="org.latestbit" level="TRACE">
     </logger>
 
+    <logger name="swaydb.core" level="WARN">
+    </logger>
+
+    <logger name="$package$" level="TRACE">
+    </logger>
+
     <root level="INFO">
         <appender-ref ref="STDERR"/>
         <appender-ref ref="STDOUT"/>
