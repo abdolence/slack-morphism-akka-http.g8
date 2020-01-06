@@ -79,6 +79,21 @@ class SlackInteractionEventsRoute(
           logger.warn( s"Received a message action event: \${messageActionEvent}" )
           showDummyModal( messageActionEvent.trigger_id )
         }
+        case actionSubmissionEvent: SlackInteractionViewSubmissionEvent => {
+            actionSubmissionEvent.view.stateParams.state.foreach { state =>
+                logger.info( s"Received action submission state: \${state}" )
+            }
+          
+            // Slack requires at least an empty body to view submissions for some reason to avoid timeout
+            // Just StatusCodes.OK isn't enough here
+            complete(
+                StatusCodes.OK,
+                HttpEntity(
+                    ContentTypes.`text/plain(UTF-8)`,
+                    ""
+                )
+            )
+        }
         case interactionEvent: SlackInteractionEvent => {
           logger.warn( s"We don't handle this interaction in this example: \${interactionEvent}" )
           complete( StatusCodes.OK )

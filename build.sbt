@@ -1,9 +1,9 @@
-lazy val root = (project in file("."))
-  .enablePlugins(ScriptedPlugin)
+lazy val root = (project in file( "." ))
+  .enablePlugins( ScriptedPlugin )
   .settings(
-    name := "giter8.g8",
+    name := "slack-morphism-akka-http.g8",
     Keys.test in Test := {
-      val _ = (g8Test in Test).toTask("").value
+      val _ = (g8Test in Test).toTask( "" ).value
     },
     scriptedLaunchOpts ++= List(
       "-Xms1024m",
@@ -14,6 +14,6 @@ lazy val root = (project in file("."))
     ),
     resolvers += Resolver.url(
       "typesafe",
-      url("http://repo.typesafe.com/typesafe/ivy-releases/")
-    )(Resolver.ivyStylePatterns)
+      url( "http://repo.typesafe.com/typesafe/ivy-releases/" )
+    )( Resolver.ivyStylePatterns )
   )
