@@ -83,7 +83,7 @@ class SlackInteractionEventsRoute(
             actionSubmissionEvent.view.stateParams.state.foreach { state =>
                 logger.info( s"Received action submission state: \${state}" )
             }
-          
+
             // Slack requires at least an empty body to view submissions for some reason to avoid timeout
             // Just StatusCodes.OK isn't enough here
             complete(
