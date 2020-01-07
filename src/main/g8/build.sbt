@@ -43,7 +43,7 @@ val scalaLoggingVersion = "3.9.2"
 val scoptVersion = "3.7.1"
 
 // To provide a ready to work example, we're using in this template embedded SwayDb to store tokens
-// You should consider use more appropriate solutions depends on your requirements
+// You should consider to use more appropriate solutions depends on your requirements
 val swayDbVersion = "0.11"
 
 lazy val root =
