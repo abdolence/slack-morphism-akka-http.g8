@@ -84,7 +84,7 @@ class SlackInteractionEventsRoute(
                 logger.info( s"Received action submission state: \${state}" )
             }
 
-            // Slack requires at least an empty body to view submissions for some reason to avoid timeout
+            // For some reason, Slack requires at least an empty HTTP body to respond to view submissions to avoid timeout
             // Just StatusCodes.OK isn't enough here
             complete(
                 StatusCodes.OK,
