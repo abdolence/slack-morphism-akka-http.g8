@@ -29,13 +29,13 @@ ThisBuild / javacOptions ++= Seq(
 )
 
 // Required dependencies
-val slackMorphismVersion = "1.0.4"
+val slackMorphismVersion = "1.0.5"
 
 // This template is for akka and akka-http as a primary framework
 val akkaVersion = "2.5.27"
 val akkaHttpVersion = "10.1.11"
 val akkaHttpCirceVersion = "1.30.0"
-val sttpVersion = "2.0.0-RC5" // for STTP for Akka
+val sttpVersion = "2.0.0" // for STTP for Akka
 
 // logging and configs for example
 val logbackVersion = "1.2.3"
