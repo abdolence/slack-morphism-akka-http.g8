@@ -7,17 +7,20 @@ import akka.http.scaladsl.server._
 import akka.stream.typed.scaladsl.ActorMaterializer
 import com.typesafe.scalalogging._
 import io.circe.parser._
+
+import cats.implicits._
+import scala.concurrent.ExecutionContext
+
 import org.latestbit.slack.morphism.client.reqresp.chat.SlackApiPostEventReply
 import org.latestbit.slack.morphism.client.reqresp.views.SlackApiViewsOpenRequest
 import org.latestbit.slack.morphism.client._
 import org.latestbit.slack.morphism.common.SlackResponseTypes
 import org.latestbit.slack.morphism.events._
 
+
 import $package$.AppConfig
 import $package$.db.SlackTokensDb
 import $package$.templates._
-
-import scala.concurrent.ExecutionContext
 
 class SlackCommandEventsRoute(
     implicit ctx: ActorContext[_],

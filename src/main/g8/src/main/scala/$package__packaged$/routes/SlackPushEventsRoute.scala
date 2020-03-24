@@ -12,6 +12,9 @@ import org.latestbit.slack.morphism.events._
 
 import scala.concurrent.{ ExecutionContext, Future }
 import io.circe.parser._
+
+import cats.implicits._
+
 import org.latestbit.slack.morphism.client.reqresp.chat.SlackApiChatPostMessageRequest
 import org.latestbit.slack.morphism.client.reqresp.conversations._
 import org.latestbit.slack.morphism.client._

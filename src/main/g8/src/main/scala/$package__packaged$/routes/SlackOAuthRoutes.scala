@@ -7,12 +7,14 @@ import akka.http.scaladsl.model._
 import akka.http.scaladsl.server._
 import akka.stream.typed.scaladsl.ActorMaterializer
 import com.typesafe.scalalogging.StrictLogging
+
+import cats.implicits._
+import scala.concurrent.ExecutionContext
+
 import org.latestbit.slack.morphism.client.SlackApiClient
 
 import $package$.AppConfig
 import $package$.db.SlackTokensDb
-
-import scala.concurrent.ExecutionContext
 
 class SlackOAuthRoutes(
     implicit ctx: ActorContext[_],
