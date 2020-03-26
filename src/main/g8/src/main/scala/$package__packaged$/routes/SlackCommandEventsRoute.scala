@@ -11,8 +11,8 @@ import io.circe.parser._
 import cats.implicits._
 import scala.concurrent.ExecutionContext
 
-import org.latestbit.slack.morphism.client.reqresp.chat.SlackApiPostEventReply
 import org.latestbit.slack.morphism.client.reqresp.views.SlackApiViewsOpenRequest
+import org.latestbit.slack.morphism.client.reqresp.events._
 import org.latestbit.slack.morphism.client._
 import org.latestbit.slack.morphism.common.SlackResponseTypes
 import org.latestbit.slack.morphism.events._
@@ -69,10 +69,10 @@ class SlackCommandEventsRoute(
                   text.getOrElse( "" )
                 )
 
-                slackApiClient.chat
-                  .postEventReply(
+                slackApiClient.events
+                  .reply(
                     response_url = response_url,
-                    SlackApiPostEventReply(
+                    SlackApiEventMessageReply(
                       commandReply.renderPlainText(),
                       blocks = commandReply.renderBlocks(),
                       response_type = Some( SlackResponseTypes.EPHEMERAL )
@@ -90,7 +90,7 @@ class SlackCommandEventsRoute(
 
                 // Sending work in progress message
                 completeWithJson(
-                  SlackApiPostEventReply(
+                   SlackApiEventMessageReply(
                     text = "Working on it..."
                   )
                 )
