@@ -14,7 +14,7 @@ import swaydb.data.slice.Slice
 
 import scala.concurrent.ExecutionContextExecutor
 
-import $package$.AppConfig
+import $package$.config._
 
 object SlackTokensDb extends StrictLogging {
 

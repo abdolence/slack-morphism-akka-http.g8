@@ -21,7 +21,7 @@ import org.latestbit.slack.morphism.client._
 import org.latestbit.slack.morphism.client.reqresp.views.SlackApiViewsPublishRequest
 import org.latestbit.slack.morphism.views.SlackHomeView
 
-import $package$.AppConfig
+import $package$.config._
 import $package$.db.SlackTokensDb
 import $package$.templates._
 

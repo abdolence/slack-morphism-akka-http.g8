@@ -1,4 +1,4 @@
-package $package$
+package $package$.config
 
 /**
  * Your slack App profile data
@@ -14,5 +14,5 @@ case class SlackAppConfig(
 )
 
 object SlackAppConfig {
-  final val empty = SlackAppConfig( null, null, null, null )
+    final val empty = SlackAppConfig( null, null, null, null )
 }

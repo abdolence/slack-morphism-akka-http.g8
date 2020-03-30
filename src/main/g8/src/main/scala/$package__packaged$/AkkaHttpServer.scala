@@ -11,8 +11,7 @@ import akka.stream.typed.scaladsl._
 import com.typesafe.scalalogging._
 import sttp.client.akkahttp.AkkaHttpBackend
 
-import org.latestbit.slack.morphism.client.SlackApiClient
-import org.latestbit.slack.morphism.client.SlackApiClientBackend
+import org.latestbit.slack.morphism.client._
 
 import scala.concurrent.duration._
 import scala.concurrent.{ ExecutionContextExecutor, Future }
@@ -22,6 +21,7 @@ import cats.implicits._
 
 import $package$.db.SlackTokensDb
 import $package$.routes._
+import $package$.config._
 
 object AkkaHttpServer extends StrictLogging {
   sealed trait Command
@@ -49,7 +49,7 @@ object AkkaHttpServer extends StrictLogging {
           )
           implicit val appConfig = config
           implicit val akkaSttpBackend = AkkaHttpBackend.usingActorSystem(classicSystem)
-          implicit val slackApiClient : SlackApiClient = SlackApiClient.create()
+          implicit val slackApiClient = SlackApiClient.create[Future]()
 
           implicit val tokensDbRef = context.spawnAnonymous( SlackTokensDb.run )
 

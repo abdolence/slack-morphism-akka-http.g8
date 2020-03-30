@@ -9,13 +9,13 @@ import com.typesafe.scalalogging._
 import io.circe.parser._
 
 import cats.implicits._
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ ExecutionContext, Future }
 
-import org.latestbit.slack.morphism.client.{ SlackApiClient, SlackApiToken }
+import org.latestbit.slack.morphism.client._
 import org.latestbit.slack.morphism.client.reqresp.views.SlackApiViewsOpenRequest
 import org.latestbit.slack.morphism.events._
 
-import $package$.AppConfig
+import $package$.config._
 import $package$.db.SlackTokensDb
 import $package$.templates._
 

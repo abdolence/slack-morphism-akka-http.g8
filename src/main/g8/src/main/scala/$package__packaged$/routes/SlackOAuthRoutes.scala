@@ -9,11 +9,11 @@ import akka.stream.typed.scaladsl.ActorMaterializer
 import com.typesafe.scalalogging.StrictLogging
 
 import cats.implicits._
-import scala.concurrent.ExecutionContext
+import scala.concurrent.{ ExecutionContext, Future }
 
-import org.latestbit.slack.morphism.client.SlackApiClient
+import org.latestbit.slack.morphism.client._
 
-import $package$.AppConfig
+import $package$.config._
 import $package$.db.SlackTokensDb
 
 class SlackOAuthRoutes(

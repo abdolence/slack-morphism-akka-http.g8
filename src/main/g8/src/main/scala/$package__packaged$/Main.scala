@@ -8,6 +8,8 @@ import com.typesafe.scalalogging._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
+import $package$.config._
+
 object Main extends App with StrictLogging {
 
   val APP_NAME = "$name$"

@@ -10,7 +10,7 @@ import akka.stream.typed.scaladsl.ActorMaterializer
 import akka.util.{ ByteString, Timeout }
 import io.circe.Encoder
 import io.circe.syntax._
-import org.latestbit.slack.morphism.client.SlackApiToken
+import org.latestbit.slack.morphism.client._
 import org.latestbit.slack.morphism.events.signature.SlackEventSignatureVerifier
 
 import scala.concurrent.{ ExecutionContext, Future }
@@ -20,7 +20,7 @@ import cats.instances.option._
 import cats.implicits._
 import com.typesafe.scalalogging.StrictLogging
 
-import $package$.AppConfig
+import $package$.config._
 import $package$.db.SlackTokensDb
 
 trait AkkaHttpServerRoutesSupport extends org.latestbit.slack.morphism.codecs.CirceCodecs with StrictLogging {

@@ -1,10 +1,7 @@
-package $package$
+package $package$.config
 
 /**
  * Example config
- * @param httpServerHost listen http host
- * @param httpServerPort listen http port
- * @param slackAppConfig slack app config
  */
 case class AppConfig(
     httpServerHost: String = "0.0.0.0",
