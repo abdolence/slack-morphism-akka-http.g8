@@ -29,7 +29,7 @@ ThisBuild / javacOptions ++= Seq(
 )
 
 // Required dependencies
-val slackMorphismVersion = "1.3.1"
+val slackMorphismVersion = "1.3.2"
 
 // This template is for akka and akka-http as a primary framework
 val akkaVersion = "2.5.27"
